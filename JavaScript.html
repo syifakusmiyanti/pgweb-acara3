@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h4 id="hasil_penjumlahan"></h4>
+    <h4 id="hasil_pengurangan"></h4>
+    <h4 id="hasil_perkalian"></h4>
+    <h4 id="hasil_pembagian"></h4>
+   
+
+    <script>
+        // variable string/teks
+        var nama = "Syifa";
+
+        //  variabel number/angka
+        var umur = 19;
+
+        // variabel bolean
+        var baik = true;
+
+        // variabel array/daftar
+        var buah = ["Mangga", "Semangka"]
+
+        var urutan_angka = [1,2,3,4,5];
+
+        console.log( "Nama:" + nama + 
+        "Umur:" + umur + " " +
+        "baik ga" + baik + 
+        "buah" + buah[1]
+        
+        );
+        
+
+        // aritmatika +_*/
+        var a = 187;
+        var b = 134;
+
+        // penjumlahan
+        var jumlah = a + b;
+        var hasiljumlah = " Jumlah dari "  + a + " dan " +  b  + " adalah "  + jumlah;
+        console.log(hasiljumlah)
+
+        // menampilkan hasil penjumlahan ke halaman 
+        document.getElementById("hasil_penjumlahan").innerHTML = hasiljumlah
+
+
+
+        // pengurangan
+        var kurang = a - b;
+        var hasilkurang = " jumlah dari " + a + " dan " + b + " adalah " + kurang;
+
+        document.getElementById("hasil_pengurangan").innerHTML = hasilkurang
+
+
+        // peerkalian
+        var kali = a * b;
+        var hasilkali = " jumlah dari " + a + " dan " + b + " adalah " + kali;
+
+        document.getElementById("hasil_perkalian").innerHTML = hasilkali
+
+
+        // penmbagian
+        var bagi = a / b;
+        var hasilbagi = " jumlah dari " + a + " dan " + b + " adalah " + bagi;
+
+        document.getElementById("hasil_pembagian").innerHTML = hasilbagi
+
+
+        
+
+
+    </script>
+    
+</body>
+</html>
