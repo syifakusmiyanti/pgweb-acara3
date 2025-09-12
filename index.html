@@ -2,123 +2,139 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> <i class="fa-solid fa-calculator"></i> Bootstrap demo </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Syifa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" 
-    integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .card-header {
+      background: #4e54c8;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    input.form-control {
+      font-size: 1.2rem;
+      text-align: right;
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    #hasil {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4e54c8;
+    }
+
+    button.btn {
+      width: 60px;
+      height: 60px;
+      margin: 5px;
+      font-size: 1.3rem;
+      border-radius: 15px;
+      transition: 0.2s;
+    }
+
+    button.btn:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 
-
 <body>
-    <div class="container mt-3">
-        <div class="card">
-            <div class="card-header">
-                <h5>Kalkulator</h5>
+  <div class="container mt-3">
+    <div class="card p-3">
+      <div class="card-header">
+        <h5><i class="fa-solid fa-calculator"></i> Kalkulator</h5>
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label class="form-label">Angka Pertama</label>
+          <input type="number" class="form-control" id="angkapertama" placeholder="Masukkan angka pertama">
+        </div>
 
-            </div>
-            <div class="card-body">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"> Angka Pertama </label>
-                    <input type="number" class="form-control" id="angkapertama" 
-                        placeholder="lebokne angka pertama">
-                </div>
+        <div class="mb-3">
+          <label class="form-label">Angka Kedua</label>
+          <input type="number" class="form-control" id="angkakedua" placeholder="Masukkan angka kedua">
+        </div>
 
+        <div class="row text-center">
+          <div class="col">
+            <button type="button" class="btn btn-primary" onclick="tambah()">+</button>
+            <button type="button" class="btn btn-secondary" onclick="kurang()">-</button>
+            <button type="button" class="btn btn-success" onclick="kali()">&times;</button>
+            <button type="button" class="btn btn-danger" onclick="bagi()">÷</button>
+          </div>
+        </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"> Angka Kedua </label>
-                    <input type="number" class="form-control" id="angkakedua"
-                        placeholder="lebokne angka keloro">
-                </div>
+        <hr>
 
-
-
-                <div class="row text-center">
-                    <div class="col">
-                        <button type="button" class="btn btn-primary" onclick="tambah()" >+</button>
-                        <button type="button" class="btn btn-secondary" onclick="kurang()">-</button>
-                        <button type="button" class="btn btn-outline-primary" onclick="kali()">*</button>
-                        <button type="button" class="btn btn-outline-secondary" onclick="bagi()">/</button>
-                    </div>
-                </div>
-
-                <hr>
-
-                <div class="row text-center">
-                    <div class="col">
-                        <h2 id="hasil"></h2>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col">
-                        <small class="text-primary">
-                        Nama : Syifa <br>
-                        NIM : 24/535339 <br>
-                        Kelas : A
-                        </small>
-                    </div>
-                </div>
-            </div>
+        <div class="row text-center">
+          <div class="col">
+            <h4>Hasilnya Adalah</h4>
+            <h2 id="hasil">0</h2>
+          </div>
+        </div>
 
 
+        <br>
+        <div class="row text-center">
+          <div class="col">
+            <small class="text-muted">
+              Nama : Syifa Kusmiyanti<br>
+              NIM : 24/535339 <br>
+              Kelas : A
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-                crossorigin="anonymous"></script>
+  <script>
+    var angka1 = document.getElementById('angkapertama');
+    var angka2 = document.getElementById('angkakedua');
 
-            <script>
-                // mengambil niai dari input
-                var angka1 = document.getElementById('angkapertama');
-                var angka2 = document.getElementById('angkakedua');
+    function tambah() {
+      var hasil_tambah = parseFloat(angka1.value) + parseFloat(angka2.value);
+      document.getElementById('hasil').innerHTML = hasil_tambah || 0;
+    }
 
-                // penjumlahan
-                function tambah() {
-                    var hasil_tambah = parseFloat(angka1.value) + parseFloat(angka2.value);
-                    console.log(hasil_tambah);
+    function kurang() {
+      var hasil_kurang = parseFloat(angka1.value) - parseFloat(angka2.value);
+      document.getElementById('hasil').innerHTML = hasil_kurang || 0;
+    }
 
-                    document.getElementById('hasil').innerHTML="Jawabane Yaiku: " + hasil_tambah;
-                }
+    function kali() {
+      var hasil_kali = parseFloat(angka1.value) * parseFloat(angka2.value);
+      document.getElementById('hasil').innerHTML = hasil_kali || 0;
+    }
 
-                // pengurangan
-                function kurang() {
-                    var hasil_kurang = parseFloat(angka1.value) - parseFloat(angka2.value);
-                    console.log(hasil_kurang);
-
-                    document.getElementById('hasil').innerHTML="Jawabane Yaiku: " + hasil_kurang;
-                }
-
-                // perkalian
-                function kali() {
-                    var hasil_kali = parseFloat(angka1.value) * parseFloat(angka2.value);
-                    console.log(hasil_kali);
-
-                    document.getElementById('hasil').innerHTML="Jawabane Yaiku: " + hasil_kali;
-                }
-                // perkalian
-                function kali() {
-                    var hasil_kali = parseFloat(angka1.value) * parseFloat(angka2.value);
-                    console.log(hasil_kali);
-
-                    document.getElementById('hasil').innerHTML="Jawabane Yaiku: " + hasil_kali;
-                }
-
-                // pembagian
-                function bagi() {
-                    var hasil_bagi = parseFloat(angka1.value) / parseFloat(angka2.value);
-                    console.log(hasil_bagi);
-
-                    document.getElementById('hasil').innerHTML="Jawabane Yaiku: " + hasil_bagi;
-                }
-
-            </script>
-
-
-
+    function bagi() {
+      var hasil_bagi = parseFloat(angka1.value) / parseFloat(angka2.value);
+      document.getElementById('hasil').innerHTML = hasil_bagi || 0;
+    }
+  </script>
 </body>
-
 </html>
